@@ -553,3 +553,128 @@ vi 4.c
 000
 4654565
 555554568
+ls
+cd 1.c
+pwd
+ls
+home
+cd ..
+ls
+git clone hello
+git clone https://github.com/taeuk14/hello
+ll
+ll.git
+ll .git
+vi hello.c
+ll
+git commit hello.c
+ls
+git commit hello.c
+git add .
+git commit hello.c
+git add ..
+git .add
+git add
+git add  .
+git add
+git add.
+a.out
+git add .
+git add first commit
+.git add first commit
+git add.
+git --help
+git add first commit
+git add .
+ls
+cd hello.c
+vi hello.c
+git commit 
+git add .
+git add first commit
+git init
+git add .
+git commit first commit
+ls
+git init
+git add .git
+git init
+git add .
+git add -m "first commit"
+git commit -m "first commit"
+git -u origin master
+git add hello
+git commit -m "first commit"
+git config --global user.email "ytaeuk@naver.com"
+git add .
+git commit "first commit"
+git config --global user.email "ytaeuk@naver.com"
+git commit -m "first commit
+
+
+
+git commit  -m "first commit"
+qcdasd
+
+dsa
+dsa
+sda
+wq
+ls
+git add .
+git push
+git push hello.c
+man gdb
+ll
+ll .
+gdb hello
+ls
+vi hello.c
+git add
+git add .
+git commit "first commit"
+git add .
+git commit "hello"
+ls
+git add .
+git push
+git pull
+git remote add hello https://github.com/taeuk14/hello
+git push first commit
+git push "first commit"
+git add..
+git add .
+ll
+ll.git
+ll .git
+git add .
+git commit -m "first commit"
+git config --global user.email "ytaeuk@naver.com"
+git commit -m "first commit"
+gdb hello.ot
+gdb hello.out
+git config --global user.name "ytaeuk@naver.com"
+git config --global user.name "taeuk14"
+git commit -m "first commit"
+git push hello
+.ll
+ll
+git init
+git push
+git add
+ls
+cd hello/
+ls
+vi hello.c
+cd ..
+ls
+vi hello
+vi hello.c
+cp hello.c hello
+cd hello/
+ls
+git add
+git add .
+git commit
+git commit -m "first commit"
+git push
