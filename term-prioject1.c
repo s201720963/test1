@@ -9,9 +9,9 @@ typedef struct{
 
 human ary[20];
 
-#define read 40
+
 typedef struct{
-    char food[read];
+    char food[20];
 }calender;
 
 calender food_list[20];
@@ -25,7 +25,7 @@ void presskey();
 void BMI();
 void calorie();
 void user_info_list();
-void food_calculate();
+//void food_calculate();
 
 int main(void)
 {
@@ -39,7 +39,7 @@ int main(void)
     while(1)
     {
 
-        printf("input your birth: ");
+        printf("Input your birth: ");
         scanf("%s", ID);
         month =(*(ID+4)-'0')*10 + (*(ID+5)-'0');
         day = (*(ID+6)-'0')*10 +(*(ID+7)-'0');
@@ -59,7 +59,7 @@ int main(void)
     }
     while(1)
     {
-        printf("input your PW: ");
+        printf("Input your PW: ");
         scanf("%s", PW);
 
         for(i=0; i<9; i++)
@@ -73,7 +73,7 @@ int main(void)
         }
         if(j)
         {
-            printf("successful login \n");
+            printf("Successful login \n");
             break;
         }
         else
@@ -92,9 +92,9 @@ int window()
 {
     int token = 0;
     printf("\n\n");
-    printf("------------- Health inprovement management ------------ \n");
-    printf("1. BMI_measurement 2.calorie_measurement 3.food_calender 4.food_calculate 0.exit \n"); // 1.BMI 측정 2. 칼로리 측정 3. 
-    printf("select_your_number: ");
+    printf("------------- Health Improvement Management ------------ \n");
+    printf("1. BMI_measurement 2.Measurement of basal metabolic rate 3.User_info_list 0.Exit \n"); // 1.BMI 측정 2. 기초대사량 측정  3. 사용자 리스트 출력
+    printf("Select_your_number: ");
     scanf("%d", &token);
     printf("\n\n");
     return token;
@@ -114,8 +114,8 @@ void operate(int token)
                 break;
             case 3: user_info_list();
                 break;
-            case 4: food_calculate();
-                break;
+           // case 4: food_calculate();
+               // break;
             default:printf("\n Invaild input \n"); 
                 break;
         }
@@ -130,21 +130,21 @@ void BMI()
 
     for(i=0; i<3; i++)
     {
-         printf("user_%d \n", count);
+         printf("User_%d \n", count);
          printf("\n");
-         printf("ex) 84.3 175.2 \n");
-         printf("input your weight height: ");
+         printf("EX) 84.3 175.2 \n");
+         printf("Input your weight and height: ");
             scanf("%lf %lf", &ary[i].weight[i], &ary[i].height[i]);
         bmi = ary[i].weight[i] / (ary[i].height[i] * ary[i].height[i])*10000;
         printf("%8.1f %8.1f %8.1f \n", ary[i].weight[i], ary[i].height[i], bmi);
         if(bmi>30)
-            printf("obesity \n\n"); // 비만
+            printf("Obesity \n\n"); // 비만
         else if(bmi >= 25)
-            printf("overweight \n\n"); // 과체중
+            printf("Overweight \n\n"); // 과체중
         else if(bmi >= 19)
-            printf("normal \n\n"); // 정상
+            printf("Normal \n\n"); // 정상
         else
-            printf("underweight \n\n"); // 저체중
+            printf("Underweight \n\n"); // 저체중
         count++;
      }
      presskey();
@@ -157,13 +157,13 @@ void calorie()
     double result = 0;
     int count = 1;
 
-    printf("male calorie average:2500 \n");
-    printf("female calorie average:2000 \n");
-    printf("male input 1 female input 2 and input age \n");
-    scanf("%d %d",&gender, &age);
-    
     for(i = 0; i<3; i++)
     {
+        printf("Male calorie average:2500 \n");
+        printf("Female calorie average:2000 \n"); 
+        printf("Enter your gender and age \n");
+        scanf("%d %d",&gender, &age);
+    
          if(gender == 1)
         {
               result = 66.47 +(13.75 * ary[i].weight[i]) + (5 * ary[i].height[i]) - (6.76* age);
@@ -175,8 +175,8 @@ void calorie()
            // result = 44 + (9 * ary[i].weight[i] + 3 * ary[i].height[i]) - (4 * age);
         }
         printf("\n");
-        printf("user_%d \n", count);
-        printf("your basic metabolic capacity: %.1lf \n",result); //기초 대사량
+        printf("User_%d \n", count);
+        printf("Your basic metabolic capacity: %.1lf \n",result); //기초 대사량
         printf("\n");
         count++;
     }
@@ -186,28 +186,7 @@ void user_info_list()
 {
     int i,j,k = 0;
     int cnt = 1;
-    /*printf("\n");
-    printf("input month: ");
-    scanf("%d", calender.month[i]);
-    printf("\n");
-    printf("input day: ");
-    scanf("%d", calender.day[j]);
     
-    while(1)
-    {
-        if(i < 1 || i > 12)
-        {
-            printf("\n");
-            printf("re_input \n");
-        }
-        else if(j < 1 || j > 31)
-        {
-            printf("\n");
-            printf("re_input \n");
-        }
-        else
-            break;
-    }*/
     for(i = 0; i < 3; i++)
     {
         printf("user_%d \n", cnt);
@@ -220,20 +199,20 @@ void user_info_list()
     }
     presskey();
 }
-void food_calculate()
+/*void food_calculate()
 {
     int i = 0;
     int calorie = 0;
     int tot = 0;
     int cnt = 0;
-    char food[6] = {0};
+    char a = 0;
     
-    for(int z = 0; z < 5; z++)
+    for(int z = 0; z < 3; z++)
     {
-        printf("exit to EOF \n");
+        printf("exit to end \n");
         printf("Enter the food you ate: ");
-        scanf("%s", food[z]);
-            fflush(stdin);
+           fgets(food_list[z].food[z], sizeof(calender.food), stdin);
+           // fflush(stdin);
         if(food == "end")
             break;
         printf("input food calorie: ");
@@ -242,21 +221,22 @@ void food_calculate()
         scanf("%d", &cnt);
     }
     tot = calorie * cnt;
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < 3; i++)
     {
-        printf("The list of food you ate:%s \n", food[i]);
+        printf("The list of food you ate:%s \n", food_list[i].food[i]);
         printf("result: %d \n", tot);
     }
+    presskey();
 
-   /* for(int a = 0; a < 5; a++)
+    for(int a = 0; a < 5; a++)
     {
         if(food_list[i].food[i] == "end") break;
         printf("input: ");
         fgets(food_list[i].food[i], sizeof(food_list[i].food[i], stdin);
-    }*/
+    }
     
 
-}
+}*/
 void presskey()
 {
     char c;
